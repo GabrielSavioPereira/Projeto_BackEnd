@@ -14,8 +14,8 @@
     </li>
 </ul>
 
-#💡 Tema: 
+## 💡 Tema: 
 Sistema de Controle Financeiro Pessoal
 
-#🎯 Objetivo
+## 🎯 Objetivo
 Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras — podendo gerar relatórios e visualizar seu saldo.
