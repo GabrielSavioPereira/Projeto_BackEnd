@@ -120,6 +120,7 @@ Registra ativos financeiros do usuário, como ações e fundos.
 | nome | String | Nome do ativo (ex: PETR4). |
 | tipo | Enum | Tipo do investimento (ex: Ação, Fundo). |
 | valor_aplicado | Decimal(10,2) | Valor investido inicialmente. |
+| rend_invest | Decimal(10,2) | Total de quanto irá render ao mês o valor investido. |
 | data_aplicacao | Date | Data em que o investimento foi feito. |
 | usuario_id | UUID/INT | Chave estrangeira para Usuário. |
 
