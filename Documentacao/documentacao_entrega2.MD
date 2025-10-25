@@ -1,7 +1,7 @@
 # 📘 Documentação da API – Sistema de Controle de Gastos Pessoal
 
 ## 🧩 Descrição Geral
-A API foi será desenvolvida com o objetivo de gerenciar contas, categorias, transações e investimentos de um usuário, funcionando como uma planilha digital de controle financeiro.  
+A API será desenvolvida com o objetivo de gerenciar contas, categorias, transações e investimentos de um usuário, funcionando como uma planilha digital de controle financeiro.  
 O sistema permite cadastrar receitas e despesas, calcular saldos e registrar investimentos, oferecendo uma visão geral das finanças pessoais.
 
 Segue abaixo um escopo inicial da nossa ideia:
