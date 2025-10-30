@@ -12,12 +12,11 @@ Segue abaixo um escopo inicial da nossa ideia:
 ### 👤 Usuários
 Gerencia o cadastro dos usuários do sistema.
 
-| Funcionalidade | Método | Rota | Descrição |
-|----------------|--------|------|------------|
-| Cadastrar usuário | POST | `/usuarios` | Cria um novo usuário. |
-| Listar usuários | GET | `/usuarios` | Lista todos os usuários cadastrados. |
-| Atualizar usuário | PUT | `/usuarios/{id}` | Atualiza as informações de um usuário. |
-| Excluir usuário | DELETE | `/usuarios/{id}` | Remove um usuário do sistema. |
+| Funcionalidade    | Método | Rota                | Descrição |
+|-------------------|--------|---------------------|------------|
+| Cadastrar usuário | POST   | `/registra-usuario` | Cria um novo usuário. |
+| Login usuários    | POST   | `/login`            | Lista todos os usuários cadastrados. |
+| Atualizar usuário | PUT    | `/usuarios/{id}`    | Atualiza as informações de um usuário. |
 
 ---
 
@@ -69,12 +68,14 @@ Registra ativos financeiros do usuário, como ações e fundos.
 ## 🧠 Entidades e Atributos
 
 ### 🧍 Usuário
-| Atributo | Tipo | Descrição |
-|-----------|------|------------|
-| id | UUID/INT | Identificador único (chave primária). |
-| nome | String | Nome completo do usuário. |
-| email | String | Email único usado para login. |
-| senha | String | Senha armazenada de forma segura. |
+| Atributo  | Tipo | Descrição                            |
+|-----------|------|--------------------------------------|
+| id        | UUID/INT | Identificador único (chave primária). |
+| nome      | String | Nome completo do usuário.            |
+| email     | String | Email único usado para login.        |
+| senha     | String | Senha armazenada de forma segura.    |
+| cpf       | String | CPF do usuario.                      |
+| data_nasc | String | Data de Nascimento do usuario.       |
 
 ---
 

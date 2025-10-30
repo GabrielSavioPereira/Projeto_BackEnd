@@ -1,5 +1,6 @@
 package com.projeto_backend.controle_gastos;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ControleGastosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ControleGastosApplication.class, args);
+		Dotenv dotenv = Dotenv.load();
+        dotenv.entries().forEach(entry ->
+            System.setProperty(entry.getKey(), entry.getValue())
+        );
+
+        SpringApplication.run(ControleGastosApplication.class, args);
 	}
 
 }
