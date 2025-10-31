@@ -127,6 +127,6 @@ Registra ativos financeiros do usuário, como ações e fundos.
 
 ---
 
-📅 **Autores:** Elyeser Gabrian, Gabriel Sávio Pereira e Vitor Botomé <br>
+📅 **Autores:** Elyeser Gabrian, Gabriel Sávio Pereira e Vítor Botomé <br>
 🎓 **Curso:** Engenharia da Computação – Unisatc  
 📘 **Matéria:** BackEnd
