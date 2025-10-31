@@ -16,7 +16,7 @@ Gerencia o cadastro dos usuários do sistema.
 |-------------------|--------|---------------------|------------|
 | Cadastrar usuário | POST   | `/registra-usuario` | Cria um novo usuário. |
 | Login usuários    | POST   | `/login`            | Da acesso para o usuário em outras funcionalidades do programa. |
-| Atualizar usuário | PUT    | `/usuarios/{id}`    | Atualiza as informações de um usuário. |
+| Atualizar usuário | PUT    | `/usuarios/{id/cpf}`    | Atualiza as informações de um usuário. |
 
 ---
 
