@@ -3,7 +3,7 @@ Gerencia o cadastro dos usuários do sistema.
 
 | Funcionalidade    | Método | Rota                | Descrição |
 |-------------------|--------|---------------------|------------|
-| Cadastrar usuário | POST   | `/registra-usuario` | Cria um novo usuário. |
+| Cadastrar usuário | POST   | `/registrar` | Cria um novo usuário. |
 | Login usuários    | POST   | `/login`            | Da acesso para o usuário em outras funcionalidades do programa. |
 | Atualizar usuário | PUT    | `/usuarios/{id/cpf}`    | Atualiza as informações de um usuário. |
 
