@@ -5,7 +5,7 @@ import com.projeto_backend.controle_gastos.dtos.UsuarioRequest;
 import com.projeto_backend.controle_gastos.dtos.UsuarioResponse;
 import com.projeto_backend.controle_gastos.models.Usuario;
 
-public class UsuarioMapper {
+public class  UsuarioMapper {
 
     public static Usuario toEntity(UsuarioRequest dto) {
         Usuario usuario = new Usuario();
