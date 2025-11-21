@@ -1,4 +1,9 @@
 package com.projeto_backend.controle_gastos.models;
 
-public class TipoInvestimento {
+public enum TipoInvestimento {
+    ACAO,
+    FUNDO,
+    TESOURO,
+    CDB,
+    OUTRO
 }
