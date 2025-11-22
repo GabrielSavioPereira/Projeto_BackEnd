@@ -1,6 +1,5 @@
 package com.projeto_backend.controle_gastos.mappers;
 
-import com.projeto_backend.controle_gastos.dtos.LoginRequest;
 import com.projeto_backend.controle_gastos.dtos.UsuarioRequest;
 import com.projeto_backend.controle_gastos.dtos.UsuarioResponse;
 import com.projeto_backend.controle_gastos.models.Usuario;
