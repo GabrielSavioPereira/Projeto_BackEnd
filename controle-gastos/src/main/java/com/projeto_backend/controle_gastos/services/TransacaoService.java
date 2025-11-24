@@ -10,7 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 
+
+
+import java.io.InputStream;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.NoSuchElementException;
 import java.util.UUID;
@@ -53,5 +61,49 @@ public class TransacaoService {
 
     public void delete(UUID id) {
         repository.deleteById(id);
+    }
+
+    public int importarPlanilha(MultipartFile file) {
+        int count = 0;
+
+        try(InputStream is = file.getInputStream();
+            XSSFWorkbook workbook = new XSSFWorkbook(is)) {
+
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                Row row = sheet.getRow(i);
+                if (row == null) continue;
+
+                String descricao = row.getCell(0).getStringCellValue();
+                BigDecimal valor = BigDecimal.valueOf(row.getCell(1).getNumericCellValue());
+                LocalDate data   = row.getCell(2).getLocalDateTimeCellValue().toLocalDate();
+                String tipoSta   = row.getCell(3).getStringCellValue();
+
+                TipoTransacao tipo = TipoTransacao.valueOf(tipoSta.toUpperCase());
+
+                UUID contaId        = UUID.fromString(row.getCell(4).getStringCellValue());
+                UUID categoriaId    = UUID.fromString(row.getCell(5).getStringCellValue());
+                UUID usuarioId      = UUID.fromString(row.getCell(6).getStringCellValue());
+
+                TransacaoRequest dto = new TransacaoRequest(
+                        descricao,
+                        valor,
+                        tipo,
+                        data,
+                        contaId,
+                        categoriaId,
+                        usuarioId
+                );
+
+                create(dto);
+                count++;
+
+            }
+        } catch (Exception e){
+            throw new RuntimeException("Erro ao importar a planilha: " + e.getMessage());
+        }
+
+        return count;
     }
 }
