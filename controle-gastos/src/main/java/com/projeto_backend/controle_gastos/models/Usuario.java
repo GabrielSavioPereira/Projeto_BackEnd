@@ -12,8 +12,6 @@ import java.util.UUID;
 public class Usuario {
 
     //Getters e Setters
-    @Setter
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -32,6 +30,14 @@ public class Usuario {
 
     @Column(nullable = false)
     private LocalDate dataNasc;
+
+    public UUID getId() {
+        return this.id;
+    }
+
+    public void setId(UUID id){
+        this.id = id;
+    }
 
     public String getNome(){
         return this.nome;

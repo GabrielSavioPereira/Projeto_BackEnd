@@ -1,6 +1,6 @@
 package com.projeto_backend.controle_gastos.dtos;
 
-import com.projeto_backend.controle_gastos.models.TipoCategoria;
+import com.projeto_backend.controle_gastos.Enums.TipoCategoria;
 import java.util.UUID;
 
 public class CategoriaResponseDTO {

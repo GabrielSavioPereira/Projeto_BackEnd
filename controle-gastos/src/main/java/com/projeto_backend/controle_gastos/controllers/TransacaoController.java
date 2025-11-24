@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -51,5 +52,11 @@ public class TransacaoController {
     public ResponseEntity<Void> delete(@PathVariable UUID id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/importar")
+    public ResponseEntity<?> importarPlanilha(@RequestParam("file") MultipartFile file) {
+        int total = service.importarPlanilha(file);
+        return ResponseEntity.ok("Importação concluida com sucesso!");
     }
 }
