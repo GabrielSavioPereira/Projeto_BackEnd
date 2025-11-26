@@ -30,8 +30,12 @@ public class UsuarioService {
 
         Usuario usuario = repository.findByEmail(dto.email());
 
+        if(usuario == null){
+            return null;
+        }
+
         if (!usuario.getSenha().equals(dto.senha())) {
-            throw new RuntimeException("Senha incorreta");
+            return null;
         }
 
         return UsuarioMapper.toResponse(usuario);
