@@ -43,8 +43,13 @@ public class UsuarioController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("atualizar/{id}")
     public ResponseEntity<UsuarioResponse> atualizar(@PathVariable UUID id, @RequestBody @Valid UsuarioRequest dto) {
         return ResponseEntity.ok(service.atualizarUsuario(id, dto));
+    }
+
+    @GetMapping("buscar/{id}")
+    public ResponseEntity<UsuarioResponse> getUsuario(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.usuarioInfo(id));
     }
 }

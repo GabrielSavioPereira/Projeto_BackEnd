@@ -7,6 +7,7 @@ public record UsuarioResponse(
         UUID id,
         String nome,
         String email,
+        String senha,
         String cpf,
         LocalDate dataNasc
 ) {
