@@ -1,6 +1,7 @@
 package com.projeto_backend.controle_gastos.services;
 
 
+import com.projeto_backend.controle_gastos.dtos.ContaDeleteResponseDto;
 import com.projeto_backend.controle_gastos.dtos.ContaRequestDto;
 import com.projeto_backend.controle_gastos.dtos.ContaResponseDto;
 import com.projeto_backend.controle_gastos.mappers.ContaMapper;
@@ -12,7 +13,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -65,5 +68,33 @@ public class ContaService {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
+    public ContaDeleteResponseDto deletarConta(UUID usuarioId, UUID contaId){
+
+
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        // Busca a conta pelo ID e va o dono
+        Conta conta = contaRepository.findById(contaId)
+                .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
+
+
+        if (!conta.getUsuario().getId().equals(usuario.getId())) {
+            throw new RuntimeException("A conta não pertence a este usuário");
+        }
+
+
+        ContaDeleteResponseDto dto = new ContaDeleteResponseDto();
+        dto.setIdConta(conta.getIdConta());
+        dto.setNomeConta(conta.getNomeConta());
+        dto.setSaldo(conta.getSaldo());
+        dto.setIdUsuario(usuario.getId());
+        dto.setNomeUsuario(usuario.getNome());
+
+
+        contaRepository.delete(conta);
+
+        return dto;
+    }
 
 }

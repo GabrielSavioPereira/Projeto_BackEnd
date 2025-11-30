@@ -1,5 +1,6 @@
 package com.projeto_backend.controle_gastos.controllers;
 
+import com.projeto_backend.controle_gastos.dtos.ContaDeleteResponseDto;
 import com.projeto_backend.controle_gastos.dtos.ContaRequestDto;
 import com.projeto_backend.controle_gastos.dtos.ContaResponseDto;
 import com.projeto_backend.controle_gastos.services.ContaService;
@@ -7,7 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -51,5 +54,14 @@ public class ContaController {
         BigDecimal saldo = contaService.calcularSaldo(usuarioId);
 
         return ResponseEntity.ok(saldo);
+    }
+
+    @DeleteMapping("/{usuarioId}/{contaId}")
+    public ResponseEntity<ContaDeleteResponseDto> deletarConta(
+            @PathVariable UUID usuarioId,
+            @PathVariable UUID contaId
+    )  {
+        ContaDeleteResponseDto resposta = contaService.deletarConta(usuarioId,contaId);
+        return ResponseEntity.ok(resposta);
     }
 }
