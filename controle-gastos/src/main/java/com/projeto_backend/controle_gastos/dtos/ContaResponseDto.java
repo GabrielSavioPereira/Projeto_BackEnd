@@ -10,9 +10,10 @@ import java.util.UUID;
 @Setter
 public class ContaResponseDto {
 
-
+        private UUID idConta;
         private String nomeConta;
         private BigDecimal saldo;
+        private UUID usuarioId;
 
 
 }
