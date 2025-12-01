@@ -10,7 +10,7 @@ public class TransacaoMapper {
         Transacoes t = new Transacoes();
         t.setDescricao(dto.descricao());
         t.setValor(dto.valor());
-        t.setData(dto.dataMovimentacao());
+        t.setDataMovimentacao(dto.dataMovimentacao());
         t.setTipo(dto.tipo());
         t.setContaId(dto.contaId());
         t.setCategoriaId(dto.categoriaId());
@@ -24,7 +24,7 @@ public class TransacaoMapper {
                 t.getId(),
                 t.getDescricao(),
                 t.getValor(),
-                t.getData(),
+                t.getDataMovimentacao(),
                 t.getTipo(),
                 t.getCategoriaId(),
                 t.getUsuarioId(),

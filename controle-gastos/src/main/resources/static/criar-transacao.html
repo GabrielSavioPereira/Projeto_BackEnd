@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Transação</title>
+</head>
+<body>
+
+    <div class="container">
+    <div class="header">
+      <h1>Criar transação</h1>
+      <div class="muted"><a class="link" href="transacoes.html">Voltar à lista</a></div>
+    </div>
+
+    <div class="card">
+      <form id="formCriar">
+        <label>Descrição
+          <input type="text" id="descricao" required>
+        </label>
+
+        <label>Valor
+          <input type="number" id="valor" step="0.01" required>
+        </label>
+
+        <label>Data (dataMovimentacao)
+          <input type="date" id="dataMovimentacao" required>
+        </label>
+
+        <label>Tipo</label>
+        <select id="tipo">
+          <option value="ENTRADA">ENTRADA</option>
+          <option value="SAIDA">SAIDA</option>
+        </select>
+
+        <label>ContaId (UUID)</label>
+        <input type="text" id="contaId" placeholder="uuid-da-conta">
+
+        <label>CategoriaId (UUID)</label>
+        <input type="text" id="categoriaId" placeholder="uuid-da-categoria">
+
+        <select name="categorias" id="categorias">
+          
+        </select>
+
+        <div style="margin-top:12px;">
+          <button type="submit" class="btn-primary">Salvar</button>
+          <button type="button" id="btnCancel" class="small">Cancelar</button>
+        </div>
+
+        <div id="msgOk" class="msg success"></div>
+        <div id="msgErr" class="msg error"></div>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="./criar-transacao.js"></script>
+</html>

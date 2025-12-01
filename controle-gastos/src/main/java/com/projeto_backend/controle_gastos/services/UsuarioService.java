@@ -42,11 +42,18 @@ public class UsuarioService {
 
     }
 
+    public UsuarioResponse usuarioInfo(UUID id){
+        Usuario usuario = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
+        return UsuarioMapper.toResponse(usuario);
+    }
+
     public UsuarioResponse atualizarUsuario(UUID id, UsuarioRequest dto){
         Usuario usuario = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado!"));
         usuario.setNome(dto.nome());
         usuario.setEmail(dto.email());
+        usuario.setSenha(dto.senha());
         usuario.setCpf(dto.cpf());
         usuario.setDataNasc(dto.dataNasc());
         repository.save(usuario);

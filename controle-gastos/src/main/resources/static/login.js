@@ -1,19 +1,32 @@
+document.addEventListener("DOMContentLoaded", () =>{
+    localStorage.clear();
+})
+
+
 document.getElementById("bt-entrar").addEventListener("click", async () => {
+    localStorage.clear();
+
     const email = document.getElementById("input-email").value;
     const senha = document.getElementById("input-pwd").value
 
 
-       fetch("http://localhost:8080/usuarios/login", {
+       const response  = await fetch("http://localhost:8080/usuarios/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ email, senha})
-        })
-        .then(async response => {
-            const body = await response.text(); // <- aqui pega o body bruto
-            console.log("STATUS:", response.status);
-            console.log("BODY:", body);
-        })
-        .catch(err => console.error(err));
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+
+            console.log(data)
+
+            localStorage.setItem("usuarioID", data.id)
+
+            window.location.href = "/home.html"
+        } else {
+            console.log(response.json())
+        }
 })
