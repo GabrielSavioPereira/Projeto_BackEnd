@@ -10,11 +10,12 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public interface TransacaoRepository extends JpaRepository<Transacoes, UUID> {
-    Page<Transacoes> findByUsuarioIdAndTipoAndData(
+
+    Page<Transacoes> findByUsuarioIdAndTipoAndDataMovimetacaoBetween(
             UUID usuarioId,
             TipoTransacao tipo,
-            LocalDate dataInicio,
-            LocalDate dateFim,
+            LocalDate inicio,
+            LocalDate fim,
             Pageable pageable
     );
 }

@@ -1,4 +1,11 @@
+document.addEventListener("DOMContentLoaded", () =>{
+    localStorage.clear();
+})
+
+
 document.getElementById("bt-entrar").addEventListener("click", async () => {
+    localStorage.clear();
+
     const email = document.getElementById("input-email").value;
     const senha = document.getElementById("input-pwd").value
 

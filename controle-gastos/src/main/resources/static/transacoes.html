@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="transacoes-style.css">
+    <title>Transacoess</title>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+      <h1>Transações</h1>
+      <div class="muted">Gerencie suas transações — listar / filtrar / importar</div>
+    </div>
+
+    <div class="grid-2">
+      <!-- LEFT: ações rápidas -->
+      <div class="card">
+        <h3>Ações</h3>
+
+        <a class="link" href="criar-transacao.html">+ Criar nova transação</a>
+
+        <hr style="margin:12px 0">
+
+        <h4>Importar planilha</h4>
+        <input type="file" id="fileInput" accept=".xlsx,.xls">
+        <button type="button" id="btnImport" class="btn-ghost small" style="margin-top:8px">Importar</button>
+        <div id="msgImport" class="msg success"></div>
+        <div id="errImport" class="msg error"></div>
+
+        <hr style="margin:12px 0">
+
+        <h4>Filtros rápidos</h4>
+        <label>Tipo</label>
+        <select id="filtroTipo">
+          <option value="">Todos</option>
+          <option value="ENTRADA">ENTRADA</option>
+          <option value="SAIDA">SAIDA</option>
+        </select>
+
+        <label>Início</label>
+        <input type="date" id="filtroInicio">
+
+        <label>Fim</label>
+        <input type="date" id="filtroFim">
+
+        <div style="margin-top:10px">
+          <button id="btnFiltro" class="btn-primary small">Aplicar filtros</button>
+          <button id="btnLimpar" class="small">Limpar</button>
+        </div>
+      </div>
+
+      <!-- RIGHT: lista e paginação -->
+      <div class="card">
+        <h3>Lista de transações</h3>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="muted">Resultados</div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <label class="muted">Page size</label>
+            <select id="pageSize" class="small">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="25">25</option>
+            </select>
+          </div>
+        </div>
+
+        <table class="table" id="tableTx">
+          <thead>
+            <tr><th>Descrição</th><th>Valor</th><th>Data</th><th>Tipo</th><th>Conta</th><th>Ações</th></tr>
+          </thead>
+          <tbody id="tbodyTx"></tbody>
+        </table>
+
+        <div class="pagination">
+          <button id="prevBtn" class="small">Anterior</button>
+          <div id="pageInfo" class="muted">Página 0 de 0</div>
+          <button id="nextBtn" class="small">Próxima</button>
+        </div>
+
+        <div id="errList" class="msg error" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+  <script src="transacoes.js"></script>
+</body>
+</html>

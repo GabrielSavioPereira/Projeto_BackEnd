@@ -47,8 +47,8 @@ public class Transacoes {
     public BigDecimal getValor() { return valor; }
     public void setValor(BigDecimal valor) { this.valor = valor; }
 
-    public LocalDate getData() { return dataMovimetacao; }
-    public void setData(LocalDate data) { this.dataMovimetacao = data; }
+    public LocalDate getDataMovimentacao() { return dataMovimetacao; }
+    public void setDataMovimentacao(LocalDate data) { this.dataMovimetacao = data; }
 
     public TipoTransacao getTipo() { return tipo; }
     public void setTipo(TipoTransacao tipo) { this.tipo = tipo; }
