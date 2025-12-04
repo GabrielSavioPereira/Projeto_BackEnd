@@ -37,3 +37,5 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 ## Técnologias Utilizadas
 
 <img src="https://skillicons.dev/icons?i=git,html,css,java,mysql,postgres" />
+
+---
