@@ -19,19 +19,37 @@ public class UsuarioController {
     private UsuarioService service;
 
     @PostMapping("/registrar")
-    public ResponseEntity<UsuarioResponse> registrar(@RequestBody UsuarioRequest dto) {
+    public ResponseEntity<UUID> registrar(@RequestBody UsuarioRequest dto) {
         return ResponseEntity.ok(service.registrar(dto));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody @Valid LoginRequest dto) {
-        boolean success = service.login(dto);
-        if (success) return ResponseEntity.ok("Login realizado com sucesso");
-        else return ResponseEntity.status(401).body("Credencias de login incorretas!");
+    public ResponseEntity<?> login(@RequestBody @Valid LoginRequest dto) {
+        try {
+            UsuarioResponse response = service.login(dto);
+
+            if (response == null) {
+                return ResponseEntity
+                        .status(401)
+                        .body("Credenciais de login incorretas!");
+            }
+
+            return ResponseEntity.ok(response);
+
+        } catch (Exception e) {
+            return ResponseEntity
+                    .status(500)
+                    .body("Erro interno no servidor: " + e.getMessage());
+        }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("atualizar/{id}")
     public ResponseEntity<UsuarioResponse> atualizar(@PathVariable UUID id, @RequestBody @Valid UsuarioRequest dto) {
         return ResponseEntity.ok(service.atualizarUsuario(id, dto));
+    }
+
+    @GetMapping("buscar/{id}")
+    public ResponseEntity<UsuarioResponse> getUsuario(@PathVariable UUID id) {
+        return ResponseEntity.ok(service.usuarioInfo(id));
     }
 }

@@ -1,6 +1,6 @@
 package com.projeto_backend.controle_gastos.dtos;
 
-import com.projeto_backend.controle_gastos.models.TipoInvestimento;
+import com.projeto_backend.controle_gastos.Enums.TipoInvestimento;
 import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;

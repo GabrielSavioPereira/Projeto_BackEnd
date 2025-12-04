@@ -1,5 +1,6 @@
 package com.projeto_backend.controle_gastos.models;
 
+import com.projeto_backend.controle_gastos.Enums.TipoCategoria;
 import jakarta.persistence.*;
 import java.util.UUID;
 
@@ -20,6 +21,7 @@ public class Categoria {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id", nullable = false)
+
     private Usuario usuario;
 
     // getters e setters

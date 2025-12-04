@@ -1,5 +1,6 @@
 package com.projeto_backend.controle_gastos.models;
 
+import com.projeto_backend.controle_gastos.Enums.TipoInvestimento;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
