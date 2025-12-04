@@ -101,3 +101,6 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 | rend_invest | Decimal(10,2) | Total de quanto irá render ao mês o valor investido. |
 | data_aplicacao | Date | Data em que o investimento foi feito. |
 | usuario_id | UUID/INT | Chave estrangeira para Usuário. |
+
+
+---
