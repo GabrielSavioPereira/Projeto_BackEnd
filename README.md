@@ -1,5 +1,5 @@
 # Projeto_BackEnd (CashInt)
-
+---
 ## Integrantes do Grupo:
 
 <ul>
@@ -13,10 +13,10 @@
         <a href="https://github.com/VitorBotome">Vitor Botome</a>
     </li>
 </ul>
-
+---
 ## 💡 Tema: 
 Sistema de Controle Financeiro Pessoal
-
+---
 ## 🎯 Objetivo
 
 Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras — podendo gerar relatórios e visualizar seu saldo.
