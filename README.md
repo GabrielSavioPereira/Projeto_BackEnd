@@ -104,3 +104,4 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 
 
 ---
+## Descrição de cada uma das rotas, contendo exemplos de requisições e respostas;
