@@ -105,3 +105,10 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 
 ---
 ## Descrição de cada uma das rotas, contendo exemplos de requisições e respostas;
+---
+## Exemplos de erros HTTP;
+---
+## Descrição de como executar o projeto localmente;
+
+---
+## Outros conteúdos relevantes implementados no projeto.
