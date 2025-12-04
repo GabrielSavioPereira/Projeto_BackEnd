@@ -4,10 +4,11 @@ import com.projeto_backend.controle_gastos.Enums.TipoTransacao;
 import com.projeto_backend.controle_gastos.dtos.TransacaoRequest;
 import com.projeto_backend.controle_gastos.dtos.TransacaoResponse;
 import com.projeto_backend.controle_gastos.mappers.TransacaoMapper;
+import com.projeto_backend.controle_gastos.models.Conta;
 import com.projeto_backend.controle_gastos.models.Transacoes;
 import com.projeto_backend.controle_gastos.repositories.TransacaoRepository;
+import com.projeto_backend.controle_gastos.repositories.ContaRepository;
 import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,22 +32,28 @@ public class TransacaoService {
     @Autowired
     private TransacaoRepository repository;
 
-    // @Autowired
-    // private ContaRepository contaRepository;
+     @Autowired
+     private ContaRepository contaRepository;
 
     public TransacaoResponse create(TransacaoRequest dto) {
         Transacoes transacoes= TransacaoMapper.toEntity(dto);
         Transacoes saved = repository.save(transacoes);
 
-        // atualizarSaldo(saved, false)
+         atualizarSaldo(saved, false);
 
         return TransacaoMapper.toResponse(saved);
     }
 
     public Page<TransacaoResponse> getAll(UUID usuarioId, TipoTransacao tipo, LocalDate inicio, LocalDate fim, Pageable pageable) {
-        Page<Transacoes> page = repository.findByUsuarioIdAndTipoAndDataMovimetacaoBetween(usuarioId, tipo, inicio, fim, pageable);
+        Page<Transacoes> page = repository.findByUsuarioIdAndTipoAndDataMovimentacaoBetween(usuarioId, tipo, inicio, fim, pageable);
         return page.map(TransacaoMapper::toResponse);
     }
+
+    public Page<TransacaoResponse> getAllByUsuario(UUID usuarioId, Pageable pageable) {
+        Page<Transacoes> page = repository.findByUsuarioId(usuarioId, pageable);
+        return page.map(TransacaoMapper::toResponse);
+    }
+
 
     public TransacaoResponse getOne(UUID id) {
         Transacoes t = repository.findById(id).orElseThrow(() -> new NoSuchElementException("Transação não encontrada"));
@@ -54,32 +61,31 @@ public class TransacaoService {
     }
 
     public TransacaoResponse update(UUID id, TransacaoRequest dto) {
-        Transacoes t = repository.findById(id).orElseThrow(() -> new NoSuchElementException("Transação não encontrada"));
 
-        // Transacoes antigo = repository.findById(id).orElseThrow(() -> new NoSuchElementException("Transação não encontrada"));
+        Transacoes antigo = repository.findById(id).orElseThrow(() -> new NoSuchElementException("Transação não encontrada"));
 
-        // atualizarSaldo(antigo, true);
+        atualizarSaldo(antigo, true);
 
-        t.setDescricao(dto.descricao());
-        t.setValor(dto.valor());
-        t.setDataMovimentacao(dto.dataMovimentacao());
-        t.setTipo(dto.tipo());
-        t.setContaId(dto.contaId());
-        t.setCategoriaId(dto.categoriaId());
-        t.setUsuarioId(dto.usuarioId());
+        antigo.setDescricao(dto.descricao());
+        antigo.setValor(dto.valor());
+        antigo.setDataMovimentacao(dto.dataMovimentacao());
+        antigo.setTipo(dto.tipo());
+        antigo.setContaId(dto.contaId());
+        antigo.setCategoriaId(dto.categoriaId());
+        antigo.setUsuarioId(dto.usuarioId());
 
-        // Transacoes atualizado = repository.save(antigo);
+         Transacoes atualizado = repository.save(antigo);
 
-        // atualizarSaldo(atualizado, false);
+         atualizarSaldo(atualizado, false);
 
-        return TransacaoMapper.toResponse(repository.save(t));
+         return TransacaoMapper.toResponse(repository.save(atualizado));
     }
 
     public void delete(UUID id) {
-        // Transacoes t = repository.findById(id)
-        //             .orElseThrow(() -> new NoSuchElementException("Transação não encontrado"));
+         Transacoes t = repository.findById(id)
+                     .orElseThrow(() -> new NoSuchElementException("Transação não encontrado"));
 
-        // atualizarSaldo(t, true)
+         atualizarSaldo(t, true);
 
         repository.deleteById(id);
     }
@@ -146,29 +152,30 @@ public class TransacaoService {
     }
 
 
-    // private void atualizarSaldo(Transacoes t, boolean revert){
-    //     conta = contaRepository.findById(t.getContaId())
-    //             .orElseThrow(() -> new NoSuchElementException("Conta não encontrada"))
+     private void atualizarSaldo(Transacoes t, boolean reverter){
 
-    //     BigDecimal saldo = conta.getSaldoAtual();
+        Conta conta = contaRepository.findById(t.getContaId())
+                 .orElseThrow(() -> new RuntimeException("Conta não encontrada"));
 
-    //     BigDecimal valor = t.getValor();
+         BigDecimal saldoAtual = conta.getSaldo();
+         BigDecimal valor = t.getValor();
 
-    //     if (revert) {
-    //         if (t.getTipo() == TipoTransacao.ENTRADA) {
-    //             saldo = saldo.subtract(valor)
-    //         } else {
-    //             saldo = saldo.add(valor)
-    //         }
-    //     } else {
-    //         if (t.getTipo() == TipoTransacao.ENTRADA) {
-    //             saldo = saldo.add(valor)
-    //         } else {
-    //             saldo = saldo.subtract(valor);
-    //         }
-    //     }
+         if (reverter) {
+             if (t.getTipo() == TipoTransacao.RECEITA) {
+                 saldoAtual = saldoAtual.subtract(valor);
+             } else {
+                 saldoAtual = saldoAtual.add(valor);
+             }
+         }
+         else {
+             if (t.getTipo() == TipoTransacao.RECEITA) {
+                 saldoAtual = saldoAtual.add(valor);
+             } else {
+                 saldoAtual = saldoAtual.subtract(valor);
+             }
+         }
 
-    //     conta.setSaldoAtual(saldo);
-    //     contaRepository.save(conta);
-    // }
+         conta.setSaldo(saldoAtual);
+         contaRepository.save(conta);
+     }
 }

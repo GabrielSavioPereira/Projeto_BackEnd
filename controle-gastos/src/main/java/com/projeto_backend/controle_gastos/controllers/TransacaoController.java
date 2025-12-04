@@ -39,6 +39,15 @@ public class TransacaoController {
         return service.getAll(usuarioId, tipo, inicio, fim, pageable);
     }
 
+    @GetMapping("/usuario/{usuarioId}")
+    public Page<TransacaoResponse> getByUsuario(
+            @PathVariable UUID usuarioId,
+            Pageable pageable
+    ) {
+        return service.getAllByUsuario(usuarioId, pageable);
+    }
+
+
     @GetMapping("/{id}")
     public ResponseEntity<TransacaoResponse> getOne(@PathVariable UUID id) {
         return ResponseEntity.ok(service.getOne(id));

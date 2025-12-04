@@ -11,11 +11,14 @@ import java.util.UUID;
 
 public interface TransacaoRepository extends JpaRepository<Transacoes, UUID> {
 
-    Page<Transacoes> findByUsuarioIdAndTipoAndDataMovimetacaoBetween(
+    Page<Transacoes> findByUsuarioIdAndTipoAndDataMovimentacaoBetween(
             UUID usuarioId,
             TipoTransacao tipo,
             LocalDate inicio,
             LocalDate fim,
             Pageable pageable
     );
+
+    Page<Transacoes> findByUsuarioId(UUID usuarioId, Pageable pageable);
+
 }

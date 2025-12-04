@@ -8,21 +8,19 @@ import com.projeto_backend.controle_gastos.mappers.ContaMapper;
 import com.projeto_backend.controle_gastos.models.Conta;
 import com.projeto_backend.controle_gastos.models.Usuario;
 import com.projeto_backend.controle_gastos.repositories.UsuarioRepository;
-import com.projeto_backend.controle_gastos.repositories.contaRepository;
+import com.projeto_backend.controle_gastos.repositories.ContaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class ContaService {
 
-    private final contaRepository contaRepository;
+    private final ContaRepository contaRepository;
     private final UsuarioRepository usuarioRepository;
     private final ContaMapper contaMapper;
 

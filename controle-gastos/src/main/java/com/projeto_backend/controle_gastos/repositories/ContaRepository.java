@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-public interface contaRepository extends JpaRepository<Conta, UUID> {
+public interface ContaRepository extends JpaRepository<Conta, UUID> {
 
 
     // busca todas as contas de um usuario
