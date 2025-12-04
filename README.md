@@ -31,3 +31,9 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 ## Documentação Entrega 03 do Projeto
 
 <a href="https://github.com/GabrielSavioPereira/Projeto_BackEnd/blob/main/Documentacao/rotas.md"> Clique Neste link para acessar a Entrega03.</a>
+
+---
+
+## Técnologias Utilizadas
+
+<img src="https://skillicons.dev/icons?i=git,html,css,java,mysql,postgres" />
