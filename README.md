@@ -109,12 +109,20 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 ➕ Criar Usuário
 
 POST /usuarios
+<br>
 {
+<br>
   "nome": "Gabriel",
+<br>
   "email": "gabriel@email.com",
+<br>
   "senha": "1234",
+<br>
   "cpf": "12345678900",
+<br>
   "dataNasc": "2006-01-01"
+<br>
+  
 }
  Resposta:
 
