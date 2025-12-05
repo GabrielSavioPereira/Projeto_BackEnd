@@ -24,7 +24,7 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 ---
 # Problema
 
-Muitas pessoas ficam individadas, então tivemos a ideia de dar inicio a esse projeto, para promover pessoas menos individadas.
+Muitas pessoas ficam individadas, gastam muito dinheiro, muitas vezes até mais do que recebe, então tivemos a ideia de dar inicio a esse projeto, para promover pessoas menos individadas.
 
 ---
 ## Documentação Entrega 02 do Projeto
