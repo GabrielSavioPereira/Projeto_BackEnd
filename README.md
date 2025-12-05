@@ -661,7 +661,7 @@ Maven 3.8+
 PostgreSQL 17+
 IDE (IntelliJ, VScode)
 ```
-3. Criar a .env
+2. Criar a .env
 
 ```
 DB_URL=jdbc:postgresql://localhost:5432/controle_gastos
