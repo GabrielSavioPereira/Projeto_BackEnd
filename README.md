@@ -46,7 +46,7 @@ Muitas pessoas ficam individadas, então tivemos a ideia de dar inicio a esse pr
 ---
 ## Limitações do projeto
 
-
+Falta de validações codigos http
 
 ---
 ## Descrição de cada uma das entidades
