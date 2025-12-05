@@ -25,8 +25,9 @@ public class Transacoes {
     @Column(nullable = false)
     private BigDecimal valor;
 
-    @Column(nullable = false)
-    private LocalDate dataMovimetacao;
+    @Column(nullable = false, name = "data_movimentacao")
+    private LocalDate dataMovimentacao;
+
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -47,8 +48,9 @@ public class Transacoes {
     public BigDecimal getValor() { return valor; }
     public void setValor(BigDecimal valor) { this.valor = valor; }
 
-    public LocalDate getDataMovimentacao() { return dataMovimetacao; }
-    public void setDataMovimentacao(LocalDate data) { this.dataMovimetacao = data; }
+    public LocalDate getDataMovimentacao() { return dataMovimentacao; }
+    public void setDataMovimentacao(LocalDate data) { this.dataMovimentacao = data; }
+
 
     public TipoTransacao getTipo() { return tipo; }
     public void setTipo(TipoTransacao tipo) { this.tipo = tipo; }
