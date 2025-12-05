@@ -136,7 +136,7 @@ POST /usuarios
 
 ---
 🏦 Conta
-]
+
 ➕ Criar Conta
 
 POST /contas
