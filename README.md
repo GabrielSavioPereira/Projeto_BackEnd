@@ -16,17 +16,18 @@
 
 # 💡 Tema: 
 Sistema de Controle Financeiro Pessoal
-
-# 🎯 Objetivo
-
-Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras, podendo gerar relatórios e visualizar seu saldo.
-
 ---
 # Problema
 
 Muitas pessoas ficam individadas, gastam muito dinheiro, muitas vezes até mais do que recebe, então tivemos a ideia de dar inicio a esse projeto, para promover pessoas menos individadas.
 
 ---
+# 🎯 Objetivo
+
+Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras, podendo gerar relatórios e visualizar seu saldo.
+
+---
+
 ## Documentação Entrega 02 do Projeto
 
 <a href="https://github.com/GabrielSavioPereira/Projeto_BackEnd/blob/main/Documentacao/documentacao_entrega2.MD"> Clique Neste link para acessar a Entrega02.</a>
@@ -47,6 +48,7 @@ Muitas pessoas ficam individadas, gastam muito dinheiro, muitas vezes até mais 
 ## Limitações do projeto
 
 Falta de validações codigos http
+Não integração com API externa
 
 ---
 ## Descrição de cada uma das entidades
