@@ -675,6 +675,9 @@ Create DATABASE controle_gastos
 ```
 
 4. Rodar
+```
+Executar o "ControleGastosApplication.java"
+```
 
 ---
 ## Outros conteúdos relevantes implementados no projeto.
