@@ -666,7 +666,6 @@ IDE (IntelliJ, VScode)
 Crie o banco:
 ```
 CREATE DATABASE controle_gastos;
-
 ```
 
 3. Configurar o application.properties
@@ -676,8 +675,6 @@ spring.datasource.username=postgres
 spring.datasource.password=suasenha
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-
-
 ```
 
 4.  Rodar
