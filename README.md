@@ -661,22 +661,17 @@ Maven 3.8+
 PostgreSQL 17+
 IDE (IntelliJ, VScode)
 
-2. Configurar o banco no PostgreSQL
+2. Criar a .env
 
-Crie o banco:
 ```
-CREATE DATABASE controle_gastos;
-```
-
-3. Configurar o application.properties
-```
-spring.datasource.url=jdbc:postgresql://localhost:5432/controle_gastos
-spring.datasource.username=postgres
-spring.datasource.password=suasenha
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+DB_URL=jdbc:postgresql://localhost:5432/controle_gastos
+DB_USER=postgres
+DB_PASSWORD=123
 ```
 
-4.  Rodar
+3.  Rodar
+
 ---
 ## Outros conteúdos relevantes implementados no projeto.
+
+Importação de tabela .xlsx (Planilha do Excel) de transições, onde na planilha deve ter descrição, valor, dataMovimento, tipo, id da conta, de usuario e da categoria.
