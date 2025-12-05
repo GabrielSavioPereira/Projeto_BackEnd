@@ -644,8 +644,6 @@ RESPOSTA 200 - OK
 ---
 ## Exemplos de erros HTTP;
 
-### ❗ Exemplos de Erros HTTP
-
 | Código | Significado | Quando ocorre no sistema |
 |--------|-------------|--------------------------|
 | 400 | Bad Request | Dados inválidos ao criar usuário ou transação. |
