@@ -127,6 +127,7 @@ POST /usuarios
  Resposta:
 
 {
+<br>
   "id": "uuid-gerado",
   <br>
   "nome": "Gabriel"
