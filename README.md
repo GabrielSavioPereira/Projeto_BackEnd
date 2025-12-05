@@ -19,7 +19,12 @@ Sistema de Controle Financeiro Pessoal
 
 # 🎯 Objetivo
 
-Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras — podendo gerar relatórios e visualizar seu saldo.
+Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras, podendo gerar relatórios e visualizar seu saldo.
+
+---
+# Problema
+
+Muitas pessoas ficam individadas, então tivemos a ideia de dar inicio a esse projeto, para promover pessoas menos individadas.
 
 ---
 ## Documentação Entrega 02 do Projeto
@@ -40,6 +45,7 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 
 ---
 ## Limitações do projeto
+
 
 
 ---
