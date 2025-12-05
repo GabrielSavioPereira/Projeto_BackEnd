@@ -178,6 +178,7 @@ POST /transacoes
 GET /transacoes/usuario/{id}
 ---
 🗂 Categorias
+
 ➕ Criar
 
 POST /categorias
@@ -187,6 +188,7 @@ POST /categorias
 }<br>
 ---
 📈 Investimentos
+
 ➕ Criar
 
 POST /investimentos
