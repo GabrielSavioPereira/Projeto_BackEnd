@@ -614,7 +614,7 @@ Cadastrar novo investimento
 
 POST /investimentos
 
-´´´json
+```json
 Exemplo
 
 REQUISIÇÃO
@@ -640,38 +640,6 @@ RESPOSTA 200 - OK
     "usuarioId": "49afe1cf-b841-47eb-9049-2b4201fca0ac"
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 ## Exemplos de erros HTTP;
