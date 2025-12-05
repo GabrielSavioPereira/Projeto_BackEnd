@@ -173,7 +173,9 @@ POST /transacoes
   "categoriaId": "uuid-categoria",<br>
   "usuarioId": "uuid-usuario"<br>
 }
+📄 Listar
 
+GET /transacoes/usuario/{id}
 
 ---
 ## Exemplos de erros HTTP;
