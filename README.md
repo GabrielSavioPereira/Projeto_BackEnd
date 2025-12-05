@@ -122,8 +122,8 @@ POST /usuarios
 <br>
   "dataNasc": "2006-01-01"
 <br>
-  
 }
+
  Resposta:
 
 {
