@@ -655,13 +655,13 @@ RESPOSTA 200 - OK
 ## Descrição de como executar o projeto localmente;
 
 1. Pré-requisitos
-
+ ```  
 Java 17+
 Maven 3.8+
 PostgreSQL 17+
 IDE (IntelliJ, VScode)
-
-2. Criar a .env
+```
+3. Criar a .env
 
 ```
 DB_URL=jdbc:postgresql://localhost:5432/controle_gastos
