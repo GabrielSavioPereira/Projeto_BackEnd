@@ -49,6 +49,7 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 ## Limitações do projeto
 
 Falta de validações codigos http
+
 Não integração com API externa
 
 ---
