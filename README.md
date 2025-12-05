@@ -104,7 +104,7 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 
 
 ---
-## Descrição de cada uma das rotas, contendo exemplos de requisições e respostas;
+## Descrição das rotas, contendo exemplos de requisições e respostas;
 👤 Usuário
 ➕ Criar Usuário
 
@@ -134,6 +134,22 @@ POST /usuarios
   <br>
 }
 
+--
+🏦 Conta
+]
+➕ Criar Conta
+
+POST /contas
+<br>
+{
+<br>
+  "nomeConta": "Carteira",
+  <br>
+  "saldo": 150.00,
+  <br>
+  "usuarioId": "uuid-do-usuario"
+  <br>
+}
 
 
 ---
