@@ -41,7 +41,7 @@ Muitas pessoas ficam individadas, gastam muito dinheiro, muitas vezes até mais 
 
 ## Técnologias Utilizadas
 
-<img src="https://skillicons.dev/icons?i=git,html,css,java,mysql,postgres" />
+<img src="https://skillicons.dev/icons?i=git,java,mysql,postgres" />
 
 ---
 ## Limitações do projeto
