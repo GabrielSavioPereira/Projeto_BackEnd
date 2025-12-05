@@ -643,6 +643,16 @@ RESPOSTA 200 - OK
 
 ---
 ## Exemplos de erros HTTP;
+
+### ❗ Exemplos de Erros HTTP
+
+| Código | Significado | Quando ocorre no sistema |
+|--------|-------------|--------------------------|
+| 400 | Bad Request | Dados inválidos ao criar usuário ou transação. |
+| 401 | Unauthorized | Usuário não autenticado ao tentar acessar rotas privadas. |
+| 404 | Not Found | Usuário/Conta/Transação não encontrada. |
+| 409 | Conflict | E-mail já cadastrado ou CPF duplicado. |
+| 500 | Internal Server Error | Erro inesperado no servidor. |
 ---
 ## Descrição de como executar o projeto localmente;
 
