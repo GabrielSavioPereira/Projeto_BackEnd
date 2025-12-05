@@ -183,10 +183,12 @@ GET /transacoes/usuario/{id}
 ➕ Criar
 
 POST /categorias
+
 {<br>
   "nome": "Alimentação",<br>
   "tipo": "DESPESA"<br>
 }<br>
+
 ---
 
 📈 Investimentos
