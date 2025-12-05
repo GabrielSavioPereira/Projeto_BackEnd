@@ -668,8 +668,13 @@ DB_URL=jdbc:postgresql://localhost:5432/controle_gastos
 DB_USER=postgres
 DB_PASSWORD=123
 ```
+3. Criar o Banco
 
-3.  Rodar
+```
+Create DATABASE controle_gastos
+```
+
+4. Rodar
 
 ---
 ## Outros conteúdos relevantes implementados no projeto.
