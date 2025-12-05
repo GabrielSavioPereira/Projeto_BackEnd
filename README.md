@@ -176,6 +176,7 @@ POST /transacoes
 📄 Listar
 
 GET /transacoes/usuario/{id}
+
 ---
 🗂 Categorias
 
@@ -187,6 +188,7 @@ POST /categorias
   "tipo": "DESPESA"<br>
 }<br>
 ---
+
 📈 Investimentos
 
 ➕ Criar
