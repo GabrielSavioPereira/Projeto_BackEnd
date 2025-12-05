@@ -11,12 +11,9 @@ import java.util.UUID;
 public interface ContaRepository extends JpaRepository<Conta, UUID> {
 
 
-    // busca todas as contas de um usuario
     List<Conta> findByUsuario(Usuario usuario);
 
-    // busca contas pelo nome
     List<Conta> findByNomeConta(String nomeConta);
 
-    // busca a conta pelo id e usuario
     Optional<Conta> findByIdContaAndUsuario(UUID idConta, Usuario usuario);
 }

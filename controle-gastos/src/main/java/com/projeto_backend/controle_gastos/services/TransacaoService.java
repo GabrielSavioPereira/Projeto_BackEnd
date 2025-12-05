@@ -102,11 +102,9 @@ public class TransacaoService {
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
                 if (row == null) continue;
-
-                // Descrição (string segura)
+                
                 String descricao = formatter.formatCellValue(row.getCell(0));
 
-                // Valor (pode vir string ou número)
                 String valorStr = formatter.formatCellValue(row.getCell(1))
                         .replace("R$", "")
                         .replace(".", "")
@@ -114,14 +112,9 @@ public class TransacaoService {
 
                 BigDecimal valor = new BigDecimal(valorStr.replace(",", "."));
 
-                // Data (converter com DataFormatter também)
                 String dataStr = formatter.formatCellValue(row.getCell(2));
 
-                LocalDate data = LocalDate.parse(dataStr); // formato yyyy-MM-dd
-                // Se vier dd/MM/yyyy, trocar por:
-                // LocalDate data = LocalDate.parse(dataStr, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
-                // Tipo (string normal)
+                LocalDate data = LocalDate.parse(dataStr);
                 String tipoSta = formatter.formatCellValue(row.getCell(3)).toUpperCase();
                 TipoTransacao tipo = TipoTransacao.valueOf(tipoSta);
 
