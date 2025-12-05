@@ -665,8 +665,8 @@ IDE (IntelliJ, VScode)
 
 ```
 DB_URL=jdbc:postgresql://localhost:5432/controle_gastos
-DB_USER=postgres
-DB_PASSWORD=123
+DB_USER=dbuser
+DB_PASSWORD=dbpassword
 ```
 3. Criar o Banco
 
