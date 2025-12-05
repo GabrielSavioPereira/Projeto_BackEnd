@@ -16,7 +16,8 @@
 
 # 💡 Tema: 
 Sistema de Controle Financeiro Pessoal
----
+
+
 # Problema
 
 Muitas pessoas ficam individadas, gastam muito dinheiro, muitas vezes até mais do que recebe, então tivemos a ideia de dar inicio a esse projeto, para promover pessoas menos individadas.
