@@ -172,7 +172,7 @@ POST /transacoes
   "contaId": "uuid-conta",<br>
   "categoriaId": "uuid-categoria",<br>
   "usuarioId": "uuid-usuario"<br>
-}
+}<br>
 📄 Listar
 
 GET /transacoes/usuario/{id}
