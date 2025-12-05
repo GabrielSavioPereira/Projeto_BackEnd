@@ -23,7 +23,7 @@ Sistema de Controle Financeiro Pessoal
 Muitas pessoas ficam individadas, gastam muito dinheiro, muitas vezes até mais do que recebe, então tivemos a ideia de dar inicio a esse projeto, para promover pessoas menos individadas.
 
 ---
-# 🎯 Objetivo
+# Solução
 
 Criar uma API para que o usuário controle suas receitas, despesas e categorias financeiras, podendo gerar relatórios e visualizar seu saldo.
 
