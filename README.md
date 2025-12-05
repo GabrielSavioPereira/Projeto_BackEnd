@@ -150,6 +150,29 @@ POST /contas
   "usuarioId": "uuid-do-usuario"
   <br>
 }
+📄 Buscar por usuário
+
+GET /contas/usuario/{id}
+
+---
+🧾 Transações
+
+➕ Criar
+
+POST /transacoes
+
+{
+<br>
+  "descricao": "Salário",
+  <br>
+  "valor": 2500.00,
+  <br>
+  "dataMovimentacao": "2025-02-01",<br>
+  "tipo": "ENTRADA",<br>
+  "contaId": "uuid-conta",<br>
+  "categoriaId": "uuid-categoria",<br>
+  "usuarioId": "uuid-usuario"<br>
+}
 
 
 ---
