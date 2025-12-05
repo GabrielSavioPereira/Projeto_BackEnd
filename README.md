@@ -128,7 +128,9 @@ POST /usuarios
 
 {
   "id": "uuid-gerado",
+  <br>
   "nome": "Gabriel"
+  <br>
 }
 
 
