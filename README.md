@@ -105,6 +105,26 @@ Criar uma API para que o usuário controle suas receitas, despesas e categorias 
 
 ---
 ## Descrição de cada uma das rotas, contendo exemplos de requisições e respostas;
+👤 Usuário
+➕ Criar Usuário
+
+POST /usuarios
+{
+  "nome": "Gabriel",
+  "email": "gabriel@email.com",
+  "senha": "1234",
+  "cpf": "12345678900",
+  "dataNasc": "2006-01-01"
+}
+ Resposta:
+
+{
+  "id": "uuid-gerado",
+  "nome": "Gabriel"
+}
+
+
+
 ---
 ## Exemplos de erros HTTP;
 ---
