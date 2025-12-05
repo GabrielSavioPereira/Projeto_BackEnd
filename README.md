@@ -654,5 +654,32 @@ RESPOSTA 200 - OK
 ---
 ## Descrição de como executar o projeto localmente;
 
+1. Pré-requisitos
+
+Java 17+
+Maven 3.8+
+PostgreSQL 17+
+IDE (IntelliJ, VScode)
+
+2. Configurar o banco no PostgreSQL
+
+Crie o banco:
+```
+CREATE DATABASE controle_gastos;
+
+```
+
+3. Configurar o application.properties
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/controle_gastos
+spring.datasource.username=postgres
+spring.datasource.password=suasenha
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+
+```
+
+4.  Rodar
 ---
 ## Outros conteúdos relevantes implementados no projeto.
