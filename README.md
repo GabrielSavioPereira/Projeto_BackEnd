@@ -176,6 +176,29 @@ POST /transacoes
 📄 Listar
 
 GET /transacoes/usuario/{id}
+---
+🗂 Categorias
+➕ Criar
+
+POST /categorias
+{<br>
+  "nome": "Alimentação",<br>
+  "tipo": "DESPESA"<br>
+}<br>
+---
+📈 Investimentos
+➕ Criar
+
+POST /investimentos
+
+{<br>
+  "nome": "Tesouro Selic",<br>
+  "tipo": "TESOURO",<br>
+  "valorAplicado": 500.00,<br>
+  "rendInvest": 12.50,<br>
+  "dataAplicacao": "2025-02-01",<br>
+  "usuarioId": "uuid"<br>
+}<br>
 
 ---
 ## Exemplos de erros HTTP;
