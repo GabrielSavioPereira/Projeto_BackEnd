@@ -150,6 +150,7 @@ POST /contas
   "usuarioId": "uuid-do-usuario"
   <br>
 }
+
 📄 Buscar por usuário
 
 GET /contas/usuario/{id}
